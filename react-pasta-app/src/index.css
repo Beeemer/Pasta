@@ -1,0 +1,218 @@
+/* ===== БАЗОВИ СТИЛОВЕ ===== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #0F3649;
+  --card-bg: #F7F1D9;
+  --accent: #0F3649;
+  --accent-soft: #EDDEA4;
+  --accent-gold: #EBAF2F;
+  --text-main: #0F3649;
+  --text-muted: #2D4B55;
+  --border: #EBAF2F;
+}
+
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  color: var(--text-main);
+
+  background-image: url("assets/pasta_pattern.png");
+  background-repeat: repeat;
+  background-position: top left;
+  background-size: 256px auto;
+  background-attachment: scroll;
+  image-rendering: pixelated;
+}
+
+/* ===== APP LAYOUT (Footer долу) ===== */
+
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem 3rem;
+}
+
+/* ===== ФОРМАТА (Questionnaire) ===== */
+
+.questionnaire {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ===== КОМПОНЕНТ ВЪПРОС (Question) ===== */
+
+.question-block {
+  background: var(--card-bg);
+  border-radius: 24px;
+  padding: 1.5rem 1.75rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(235, 175, 47, 0.4);
+  max-width: 900px;
+  margin: 2rem auto;
+}
+
+.question-block h3 {
+  margin: 0 0 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: center;
+}
+
+
+/* ===== Multiple choice опции ===== */
+
+/* Подредба на опциите в ред */
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 1rem;
+  row-gap: 1.3rem;
+}
+
+/* скриваме radio */
+.option input[type="radio"] {
+  display: none;
+}
+
+/* неактивен бутон */
+.option span {
+  padding: 0.6rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--accent-gold);
+  background-color: var(--card-bg);
+  color: var(--text-main);
+  font-size: 0.98rem;
+  cursor: pointer;
+  transition:
+          background-color 0.2s ease,
+          border-color 0.2s ease,
+          color 0.2s ease,
+          box-shadow 0.2s ease,
+          transform 0.1s ease;
+}
+
+/* hover */
+.option:hover span {
+  background-color: var(--accent-soft);
+  border-color: #d59a22;
+  box-shadow: 0 0 0 3px rgba(235, 175, 47, 0.25);
+  transform: translateY(-1px);
+}
+
+/* избран бутон */
+.option input[type="radio"]:checked + span {
+  background-color: var(--accent-gold);
+  color: var(--text-main);
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 0 3px rgba(15, 54, 73, 0.35);
+}
+
+
+
+/* ===== Текстови полета (textarea) ===== */
+
+.text-input {
+  width: 100%;
+  max-width: 700px;
+  margin: 0.5rem auto 0;
+  display: block;
+  padding: 0.8rem 1rem;
+  border-radius: 16px;
+  border: 1px solid rgba(235, 175, 47, 0.4);
+  font-size: 0.95rem;
+  resize: vertical;
+  outline: none;
+  background-color: #fffdf7;
+  color: var(--text-main);
+}
+
+.text-input::placeholder {
+  color: rgba(45, 75, 85, 0.7);
+}
+
+.text-input:focus {
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 0 3px rgba(235, 175, 47, 0.25);
+}
+
+
+/* ===== SUBMIT бутон ===== */
+
+.questionnaire button[type="submit"],
+.questionnaire button:not([type]) {
+  align-self: flex-end;
+  margin-top: 1rem;
+  padding: 0.7rem 1.8rem;
+  border-radius: 999px;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  background: var(--accent);
+  color: var(--card-bg);
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  transition:
+          background-color 0.2s ease,
+          transform 0.1s ease,
+          box-shadow 0.2s ease;
+}
+
+.questionnaire button[type="submit"]:hover,
+.questionnaire button:not([type]):hover {
+  background: #2D4B55;
+  transform: translateY(-1px);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.45);
+}
+
+.questionnaire button[type="submit"]:active,
+.questionnaire button:not([type]):active {
+  transform: translateY(0);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+
+
+
+
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 640px) {
+  .question-block {
+    padding: 1.25rem 1.3rem;
+  }
+
+  .question-block h3 {
+    font-size: 0.95rem;
+  }
+
+  .questionnaire button[type="submit"],
+  .questionnaire button:not([type]) {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+}
