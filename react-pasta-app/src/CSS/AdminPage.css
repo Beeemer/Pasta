@@ -1,0 +1,176 @@
+/* Контейнер върху шарения фон */
+.admin-page-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 3rem 1rem 4rem;
+}
+
+/* Централен панел */
+.admin-page {
+    width: 100%;
+    max-width: 1000px;
+    background: rgba(0, 0, 0, 0.72);           /* тъмен overlay */
+    backdrop-filter: blur(6px);               /* лек blur на пастата отдолу */
+    border-radius: 24px;
+    padding: 2rem 2.5rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(237, 222, 164, 0.5); /* бежов контур */
+    color: #f7f1d9;                            /* кремав текст */
+}
+
+/* Заглавия */
+.admin-page h1 {
+    text-align: center;
+    margin: 0 0 1.5rem;
+    font-size: 1.8rem;
+}
+
+.admin-page h2 {
+    margin: 0 0 1rem;
+    font-size: 1.2rem;
+}
+
+.admin-page h3 {
+    margin: 0 0 0.7rem;
+    font-size: 1rem;
+}
+
+/* Summary card */
+.admin-summary {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.admin-card {
+    background: rgba(15, 54, 73, 0.95);
+    border-radius: 16px;
+    padding: 1.2rem 1.8rem;
+    border: 1px solid rgba(235, 175, 47, 0.7);
+    text-align: center;
+}
+
+.admin-number {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #ebaf2f;
+}
+
+/* Статистика по въпроси */
+.admin-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+.admin-stat-card {
+    background: rgba(15, 54, 73, 0.9);
+    border-radius: 14px;
+    padding: 1rem 1.2rem;
+    border: 1px solid rgba(148, 163, 184, 0.5);
+}
+
+.admin-stat-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.admin-stat-card li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.2rem 0;
+}
+
+.admin-stat-card .answer {
+    color: #f7f1d9;
+}
+
+.admin-stat-card .count {
+    font-weight: 600;
+    color: #ebaf2f;
+}
+
+.admin-stat-card .muted {
+    color: #9ca3af;
+}
+
+/* Таблица със сурови данни */
+.admin-table-section h2 {
+    margin-bottom: 0.6rem;
+}
+
+.admin-table-wrapper {
+    max-height: 320px;
+    overflow: auto;
+    border-radius: 12px;
+    border: 1px solid rgba(148, 163, 184, 0.5);
+    background: rgba(15, 54, 73, 0.9);
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 0.45rem 0.65rem;
+    border-bottom: 1px solid rgba(55, 65, 81, 0.7);
+}
+
+.admin-table th {
+    position: sticky;
+    top: 0;
+    background: rgba(15, 54, 73, 0.98);
+}
+
+.admin-table code {
+    color: #eddea4;
+    font-size: 0.78rem;
+}
+
+.admin-open {
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+}
+
+.admin-open-card {
+    background: rgba(15, 54, 73, 0.9);
+    border-radius: 14px;
+    padding: 1rem 1.2rem;
+    border: 1px solid rgba(237, 222, 164, 0.6);
+}
+
+.admin-open-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.6rem;
+}
+
+.admin-open-card ul {
+    list-style: disc;
+    padding-left: 1.2rem;
+    margin: 0;
+}
+
+.admin-open-card li {
+    margin-bottom: 0.25rem;
+}
+
+.admin-open-card .muted {
+    color: #9ca3af;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .admin-page {
+        padding: 1.5rem 1.3rem;
+    }
+}
